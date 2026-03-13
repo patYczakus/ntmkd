@@ -1,18 +1,18 @@
 import * as sjs from "stoat.js"
 import * as path from "path"
-import { CommandHandler } from "../commandsys/core/cmdhandler.mjs"
+import { CommandHandler, CommandHandlerError } from "../commandsys/core/cmdhandler.mjs"
 import * as coredir from "../coredir.js"
 
 const client = new sjs.Client({
     autoReconnect: true,
-    heartbeatInterval: 10,
+    heartbeatInterval: 30,
 })
 
 client.on("ready", () => {
     console.log("No to mamy kurcze depot na Stoacie!\n  ID: " + client.user.id)
 })
 
-client.on("messageCreate", (message) => {
+client.on("messageCreate", async (message) => {
     if (message.author.bot) return
     if (message.channel.type !== "TextChannel") return
     if (!message.content.startsWith(`<@${client.user.id}>`)) return
@@ -24,11 +24,30 @@ client.on("messageCreate", (message) => {
      */
     let cmd
     try {
-        cmd = require(path.join(coredir, "commandsys", "list", command))
-    } catch {}
-    if (!cmd) return
-    const handler = new CommandHandler("stoat", message, cmd.data)
-    cmd.execute(handler)
+        cmd = await import("../commandsys/list/" + command + ".js")
+    } catch (e) {
+        console.warn("No to mamy kurcze kłopot z komendą", command, "\n ", e)
+        return
+    }
+
+    try {
+        const handler = new CommandHandler("stoat", message, client, cmd.data)
+        cmd.default.execute(handler)
+    } catch (err) {
+        if (err instanceof CommandHandlerError) {
+            message.reply({
+                embeds: [
+                    {
+                        title: "No to mamy kurcze kłopot...",
+                        description: "Wystąpił błąd w analizowaniu komendy.\n```" + err.message + "```",
+                        colour: "#EE2323",
+                    },
+                ],
+            })
+        } else {
+            console.error(`No to mamy kurcze kłopot!\n  Lokalizacja: Stout (komenda ${cmd})\n  Błąd:`, err)
+        }
+    }
 })
 
 client.on("error", (err) => {

@@ -68,7 +68,7 @@ module.exports = {
             }
             if (["text", "number"].includes(option.type) && !Array.isArray(option.choices)) {
                 option.min ??= 0
-                option.max ??= 2 ** 16
+                option.max ??= 2000
             }
             option.required ??= false
             this.args.push(option)

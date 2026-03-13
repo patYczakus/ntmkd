@@ -3,26 +3,70 @@ const fs = require("fs/promises")
 const path = require("path")
 
 module.exports = {
-    data: new Command().setName("help").setDescription("Centrum pomocy - to ten panel, który widzisz!"),
+    data: new Command().setName("help").setDescription("Centrum pomocy bota").setOption({
+        type: "text",
+        name: "cmd",
+        description: "Komenda do wyszukania",
+    }),
 
     /**
      *
      * @param {import("../core/cmdhandler.mjs").CommandHandler} handler
      */
     async execute(handler) {
-        const cmds = (await fs.readdir(path.join("commandsys", "list"))).map((x) => {
-            if (x == __filename.slice(__dirname.length)) var dt = this.data
-            else var dt = require(`./${x}`).data
+        if (!handler.options.cmd) {
+            const cmds = (await fs.readdir(path.join("commandsys", "list"))).map((x) => {
+                if (x == __filename.slice(__dirname.length)) var dt = this.data
+                else var dt = require(`./${x}`).data
 
-            return `- \`${dt.name}\` - ${dt.desc}`
-        })
-        handler.reply({
-            embeds: [
-                {
-                    title: "No to mamy kurcze depot",
-                    description: `Witaj! Jestem botem odpowiedzialnym za memy typu \"no to mamy kurcze...\". Poniżej masz moją listę!\n\n${cmds.join("\n")}`,
-                },
-            ],
-        })
+                return `- \`${dt.name}\` - ${dt.desc}`
+            })
+            handler.reply({
+                embeds: [
+                    {
+                        title: "No to mamy kurcze depot!",
+                        description: `Witaj! Jestem botem odpowiedzialnym za memy typu \"no to mamy kurcze...\". Działam jednocześnie na Discordzie, oraz na Stoucie!\n\nPoniżej masz moją listę, jeśli chcesz zdobyć więcej informacji, wpisz \`help <komenda>\`:\n${cmds.join("\n")}`,
+                    },
+                ],
+            })
+        } else {
+            let cmd
+            try {
+                if (handler.options.cmd == this.data.name) cmd = this.data
+                else cmd = require(`./${handler.options.cmd}`).data
+            } catch {
+                handler.reply({
+                    embeds: [
+                        {
+                            title: "No to mamy kurcze kłopot...",
+                            description: `Nie mam takiej komendy. Może jest gdzieś literówka?`,
+                            color: "#EE2323",
+                        },
+                    ],
+                })
+                return
+            }
+
+            handler.reply({
+                embeds: [
+                    {
+                        title: `/${cmd.name}`,
+                        description: `${cmd.desc}\n\nArgumenty: ${cmd.args
+                            .map(
+                                (x) =>
+                                    `\n- \` ${x.name}\` - ${x.description}${
+                                        x.choices
+                                            ? ` (wybór)${x.choices
+                                                  .filter((x) => x.show ?? true)
+                                                  .map((y) => `\n   - ${y.name}`)
+                                                  .join("")}`
+                                            : ""
+                                    }`,
+                            )
+                            .join("")}`,
+                    },
+                ],
+            })
+        }
     },
 }
