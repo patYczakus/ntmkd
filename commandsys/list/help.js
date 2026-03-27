@@ -30,6 +30,20 @@ module.exports = {
                 ],
             })
         } else {
+            const _choices = (arg) => {
+                const filtered = arg.filter((x) => x.show ?? true).toSorted(() => Math.random() - 0.5)
+
+                if (filtered.length > 20) {
+                    return (
+                        filtered
+                            .slice(0, 20)
+                            .map((y) => `\n   - ${y.name}`)
+                            .join("") + `\n   - *+${filtered.length - 20} możliwości*`
+                    )
+                }
+                return filtered.map((y) => `\n   - ${y.name}`).join("")
+            }
+
             let cmd
             try {
                 if (handler.options.cmd == this.data.name) cmd = this.data
@@ -52,17 +66,7 @@ module.exports = {
                     {
                         title: `/${cmd.name}`,
                         description: `${cmd.desc}\n\nArgumenty: ${cmd.args
-                            .map(
-                                (x) =>
-                                    `\n- \` ${x.name}\` - ${x.description}${
-                                        x.choices
-                                            ? ` (wybór)${x.choices
-                                                  .filter((x) => x.show ?? true)
-                                                  .map((y) => `\n   - ${y.name}`)
-                                                  .join("")}`
-                                            : ""
-                                    }`,
-                            )
+                            .map((x) => `\n- \` ${x.name}\` - ${x.description}${x.choices ? ` (wybór)${_choices(x.choices)}` : ""}`)
                             .join("")}`,
                     },
                 ],
