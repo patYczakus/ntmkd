@@ -84,7 +84,11 @@ module.exports = {
         }
 
         toDiscordCommand() {
-            const slash = new djs.SlashCommandBuilder().setName(this.name).setDescription(this.desc)
+            const slash = new djs.SlashCommandBuilder()
+                .setName(this.name)
+                .setDescription(this.desc)
+                .setContexts(djs.InteractionContextType.BotDM, djs.InteractionContextType.Guild, djs.InteractionContextType.PrivateChannel)
+                .setIntegrationTypes(djs.ApplicationIntegrationType.UserInstall, djs.ApplicationIntegrationType.GuildInstall)
             for (const arg of this.args) {
                 switch (arg.type) {
                     case "text":
