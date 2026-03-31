@@ -52,7 +52,7 @@ client.on("error", (err) => {
     console.error("No to mamy kurcze kłopot!\n  Lokalizacja: Stout\n  Błąd:", err)
 })
 
-if (process.env.STOAR_BOT_TOKEN) {
+if (process.env.STOAT_BOT_TOKEN) {
     console.log("Logowanie Stoat tokenem", process.env.STOAT_BOT_TOKEN.slice(0, 6) + "*".repeat(process.env.STOAT_BOT_TOKEN.length - 6))
     client.loginBot(process.env.STOAT_BOT_TOKEN)
 }
