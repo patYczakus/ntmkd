@@ -61,5 +61,7 @@ client.on("error", (err) => {
     console.error("No to mamy kurcze kłopot!\n  Lokalizacja: Discord\n  Błąd:", err)
 })
 
-console.log("Logowanie Discord tokenem", process.env.DISCORD_BOT_TOKEN.slice(0, 6) + "*".repeat(process.env.DISCORD_BOT_TOKEN.length - 6))
-client.login(process.env.DISCORD_BOT_TOKEN)
+if (process.env.DISCORD_BOT_TOKEN) {
+    console.log("Logowanie Discord tokenem", process.env.DISCORD_BOT_TOKEN.slice(0, 6) + "*".repeat(process.env.DISCORD_BOT_TOKEN.length - 6))
+    client.login(process.env.DISCORD_BOT_TOKEN)
+}

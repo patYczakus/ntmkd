@@ -1,7 +1,5 @@
 import * as sjs from "stoat.js"
-import * as path from "path"
 import { CommandHandler, CommandHandlerError } from "../commandsys/core/cmdhandler.mjs"
-import * as coredir from "../coredir.js"
 
 const client = new sjs.Client({
     autoReconnect: true,
@@ -54,5 +52,7 @@ client.on("error", (err) => {
     console.error("No to mamy kurcze kłopot!\n  Lokalizacja: Stout\n  Błąd:", err)
 })
 
-console.log("Logowanie Stoat tokenem", process.env.STOAT_BOT_TOKEN.slice(0, 6) + "*".repeat(process.env.STOAT_BOT_TOKEN.length - 6))
-client.loginBot(process.env.STOAT_BOT_TOKEN)
+if (process.env.STOAR_BOT_TOKEN) {
+    console.log("Logowanie Stoat tokenem", process.env.STOAT_BOT_TOKEN.slice(0, 6) + "*".repeat(process.env.STOAT_BOT_TOKEN.length - 6))
+    client.loginBot(process.env.STOAT_BOT_TOKEN)
+}

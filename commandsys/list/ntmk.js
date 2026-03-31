@@ -100,13 +100,121 @@ module.exports = {
                 { name: "No to mamy kucze nalot", value: "nalot.jpg" },
                 { name: "nalot", value: "nalot.jpg", show: false },
                 //No to weźcie kurcze mnie wypuśćcie
-                { name: "No to weźcie kurcze mnie wypuśćcie", value: "wypuscie.jpg" },
-                { name: "weźcie kurcze wypuśćcie", value: "wypuscie.jpg", show: false },
-                { name: "wezcie kurcze wypusccie", value: "wypuscie.jpg", show: false },
-                { name: "wezcie wypusccie", value: "wypuscie.jpg", show: false },
-                { name: "weźcie wypuśćcie", value: "wypuscie.jpg", show: false },
-                { name: "wypuśćcie", value: "wypuscie.jpg", show: false },
-                { name: "wypusccie", value: "wypuscie.jpg", show: false },
+                { name: "No to weźcie kurcze mnie wypuśćcie", value: "wypuscie.ai.jpg" },
+                { name: "weźcie kurcze wypuśćcie", value: "wypuscie.ai.jpg", show: false },
+                { name: "wezcie kurcze wypusccie", value: "wypuscie.ai.jpg", show: false },
+                { name: "wezcie wypusccie", value: "wypuscie.ai.jpg", show: false },
+                { name: "weźcie wypuśćcie", value: "wypuscie.ai.jpg", show: false },
+                { name: "wypuśćcie", value: "wypuscie.ai.jpg", show: false },
+                { name: "wypusccie", value: "wypuscie.ai.jpg", show: false },
+                //3 tony miału
+                { name: "No to mamy kurcze trzy tony miału", value: "3-tony-mialu.ai.jpg" },
+                { name: "No to mamy kurcze 3 tony miału", value: "3-tony-mialu.ai.jpg", show: false },
+                { name: "trzy tony miału", value: "3-tony-mialu.ai.jpg", show: false },
+                { name: "trzy tony mialu", value: "3-tony-mialu.ai.jpg", show: false },
+                { name: "3 tony miału", value: "3-tony-mialu.ai.jpg", show: false },
+                { name: "3 tony mialu", value: "3-tony-mialu.ai.jpg", show: false },
+                //Kino absolutne
+                { name: "No to mamy kurcze kino absolutne", value: "absolute-cimena.jpg" },
+                { name: "kino absolutne", value: "absolute-cimena.jpg", show: false },
+                { name: "absolutne kino", value: "absolute-cimena.jpg", show: false },
+                //Bagno
+                { name: "No to mamy kurcze bagno", value: "bagno.ai.png" },
+                { name: "bagno", value: "bagno.ai.png", show: false },
+                //Bajo jajo
+                { name: "No to mamy kurcze bajo jajo", value: "bajo-jajo.ai.png" },
+                { name: "bajo jajo", value: "bajo-jajo.ai.png", show: false },
+                //Bezrobocie
+                { name: "No to mamy kurcze bezrobocie", value: "bezrobocie.ai.png" },
+                { name: "bezrobocie", value: "bezrobocie.ai.png", show: false },
+                { name: "jobless", value: "bezrobocie.ai.png", show: false },
+                //Bezrobocie
+                { name: "No to mamy kurcze bezrobocie", value: "bezrobocie.ai.png" },
+                { name: "bezrobocie", value: "bezrobocie.ai.png", show: false },
+                //Diament
+                { name: "No to mamy kurcze diament", value: "diament.png" },
+                { name: "diament", value: "diament.png", show: false },
+                //Dofinansowanie UE
+                { name: "No to mamy kurcze dofinansowanie od funduszy europejskich", value: "dofinansowanie-ue.png" },
+                { name: "No to mamy kurcze dofinansowanie ue", value: "dofinansowanie-ue.png", show: false },
+                { name: "dofinansowanie od funduszy europejskich", value: "dofinansowanie-ue.png", show: false },
+                { name: "dofinansowanie ue", value: "dofinansowanie-ue.png", show: false },
+                //Esioka
+                { name: "No to mamy kurcze esioka", value: "esioka.ai.png" },
+                { name: "esioka", value: "esioka.ai.png", show: false },
+                //Jackpot
+                { name: "No to mamy kurcze jackpot", value: "jackpot.png" },
+                { name: "jackpot", value: "jackpot.png", show: false },
+                //Kadzidlo
+                { name: "No to mamy kurcze kadzidlo", value: "kadzidlo.ai.png" },
+                { name: "kadzidlo", value: "kadzidlo.ai.png", show: false },
+                //Kokpit
+                { name: "No to mamy kurcze kokpit", value: "kokpit.ai.png" },
+                { name: "kokpit", value: "kokpit.ai.png", show: false },
+                //Kolegę
+                { name: "No to mamy kurcze kolegę", value: "kolega.ai.png" },
+                { name: "kolegę", value: "kolega.ai.png", show: false },
+                { name: "kolege", value: "kolega.ai.png", show: false },
+                //Konfidenta
+                { name: "No to mamy kurcze konfidenta", value: "konfidenta.ai.png" },
+                { name: "konfidenta", value: "konfidenta.ai.png", show: false },
+                //Kotlet
+                { name: "No to mamy kurcze kotlet", value: "kotlet.png" },
+                { name: "kotlet", value: "kotlet.png", show: false },
+                //Łyk monstera
+                { name: "No to mamy kurcze łyk monstera", value: "esioka.ai.png" },
+                { name: "łyk monstera", value: "esioka.ai.png", show: false },
+                //No to nie mamy kurcze silnika
+                { name: "No to nie mamy kurcze silnika", value: "ni-ma-silnika.ai.png" },
+                { name: "nie ma silnika", value: "ni-ma-silnika.ai.png", show: false },
+                { name: "ni ma silnika", value: "ni-ma-silnika.ai.png", show: false },
+                //Nie mamy kłopotu
+                { name: "No to nie mamy kurcze kłopotu", value: "nie-klopot.ai.png" },
+                { name: "nie mamy kłopotu", value: "nie-klopot.ai.png", show: false },
+                { name: "nie mamy klopotu", value: "nie-klopot.ai.png", show: false },
+                //Nie mamy wifi
+                { name: "No to nie mamy kurcze Wi-Fi", value: "nie-wifi.ai.png" },
+                { name: "nie mamy wi-fi", value: "nie-wifi.ai.png", show: false },
+                { name: "nie mamy wifi", value: "nie-wifi.ai.png", show: false },
+                //Nocny autobus
+                { name: "No to mamy kurcze nocny autobus", value: "nocny-autobus.ai.png" },
+                { name: "nocny autobus", value: "nocny-autobus.ai.png", show: false },
+                //Potworka
+                { name: "No to mamy kurcze potworka", value: "potworka.png" },
+                { name: "potworka", value: "potworka.png", show: false },
+                //Problem
+                { name: "No to mamy kurcze problem", value: "problem.png" },
+                { name: "problem", value: "problem.png", show: false },
+                //Pryncy pałki
+                { name: "No to mamy kurcze pryncy pałki", value: "pryncy-palki.png" },
+                { name: "pryncy pałki", value: "pryncy-palki.png", show: false },
+                { name: "pryncy palki", value: "pryncy-palki.png", show: false },
+                //Szpital Psychiatryczny Choroszcz //Jedno miejsce na ziemi
+                { name: "No to mamy kurcze jedno miejsce na ziemi", value: "spc.ai.png" },
+                { name: "jedno miejsce na ziemi", value: "spc.ai.png", show: false },
+                { name: "szpital psychiatryczny choroszcz", value: "spc.ai.png", show: false },
+                { name: "psychiatryk choroszcz", value: "spc.ai.png", show: false },
+                //Stryrtę
+                { name: "No to mamy kurcze styrtę", value: "styrte.ai.png" },
+                { name: "styrtę", value: "styrte.ai.png", show: false },
+                { name: "styrte", value: "styrte.ai.png", show: false },
+                //Weekend
+                { name: "No to mamy kurcze weekend", value: "weekend.ai.png" },
+                { name: "weekend", value: "weekend.ai.png", show: false },
+                //Toyota yaris
+                { name: "No to mamy kurcze toyota yaris", value: "yaris.png" },
+                { name: "No to mamy kurcze toyotę yaris", value: "yaris.png", show: false },
+                { name: "toyota yaris", value: "yaris.png", show: false },
+                { name: "yaris", value: "yaris.png", show: false },
+                //Zatwardzenie
+                { name: "No to mamy kurcze zatwardzenie", value: "zatwardzenie.ai.png" },
+                { name: "zatwardzenie", value: "zatwardzenie.ai.png", show: false },
+                //Znowu
+                { name: "No to mamy kurcze znowu", value: "znowu.ai.png" },
+                { name: "znowu", value: "znowu.ai.png", show: false },
+                //Mamy kurcze
+                { name: "No to mamy kurcze", value: "mamy-kurcze.jpg" },
+                { name: "mamy kurcze", value: "mamy-kurcze.jpg", show: false },
             ],
         }),
 
@@ -117,7 +225,10 @@ module.exports = {
     async execute(handler) {
         const file = await fs.readFile(path.join("imgs", handler.options.typ))
 
+        if (handler.options.typ.includes(".ai.")) var content = "⚠️ **Uwaga!** Oznaczono tego mema jako AI slop - jakość mema może być kurcze gorsza."
+
         handler.reply({
+            content,
             attachments: [{ buffer: file, name: handler.options.typ }],
         })
     },

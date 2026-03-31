@@ -5,6 +5,17 @@ module.exports = {
         constructor() {
             this.name = "command"
             this.desc = "Base command class"
+            /**
+             * @type {{
+             * name: string,
+             * description: string
+             * type: "number" | "text" | "boolean" | "user" | "role",
+             * required: boolean,
+             * min?: number,
+             * max?: number,
+             * choices?: Array<{name: string, value: string | number, show?: boolean} | string | number>,
+             * }[]}
+             */
             this.args = []
         }
 
@@ -38,7 +49,7 @@ module.exports = {
          * @param {string} option.description - The description of the option
          * @param {"text"} option.type - The type of the option
          * @param {boolean} [option.required=false] - Whether the option is required
-         * @param {Array<{name: string, value: string} | string>} option.choices - The choices for the option. If not Object, name and value will be the same
+         * @param {Array<{name: string, value: string, show?: boolean} | string>} option.choices - The choices for the option. If not Object, name and value will be the same
          * @returns {this}
          */
         /**
@@ -61,6 +72,16 @@ module.exports = {
          * @param {"boolean" | "user" | "role"} option.type - The type of the option
          * @param {boolean} [option.required=false] - Whether the option is required
          * @return {this}
+         */
+        /**
+         * @param {Object} option
+         * @param {string} option.name
+         * @param {string} option.description
+         * @param {"number" | "text" | "boolean" | "user" | "role"} option.type
+         * @param {boolean} [option.required=false]
+         * @param {number} [option.min]
+         * @param {number} [option.max]
+         * @param {Array<{name: string, value: string | number, show?: boolean} | string | number>} [option.choices]
          */
         setOption(option) {
             if (["text", "number"].includes(option.type) && Array.isArray(option.choices)) {
