@@ -115,9 +115,9 @@ module.exports = {
                 { name: "3 tony miału", value: "3-tony-mialu.ai.jpg", show: false },
                 { name: "3 tony mialu", value: "3-tony-mialu.ai.jpg", show: false },
                 //Kino absolutne
-                { name: "No to mamy kurcze kino absolutne", value: "absolute-cimena.jpg" },
-                { name: "kino absolutne", value: "absolute-cimena.jpg", show: false },
-                { name: "absolutne kino", value: "absolute-cimena.jpg", show: false },
+                { name: "No to mamy kurcze kino absolutne", value: "absolute-cimena.png" },
+                { name: "kino absolutne", value: "absolute-cimena.png", show: false },
+                { name: "absolutne kino", value: "absolute-cimena.png", show: false },
                 //Bagno
                 { name: "No to mamy kurcze bagno", value: "bagno.ai.png" },
                 { name: "bagno", value: "bagno.ai.png", show: false },
@@ -215,6 +215,9 @@ module.exports = {
                 //Mamy kurcze
                 { name: "No to mamy kurcze", value: "mamy-kurcze.jpg" },
                 { name: "mamy kurcze", value: "mamy-kurcze.jpg", show: false },
+                //Bele
+                { name: "No to mamy kurde bele", value: "bele.jpg" },
+                { name: "bele", value: "bele.jpg" },
             ],
         }),
 
